@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="spring_project01.Address">
+        <property name="address" value="华中科技大学"/>
+    </bean>
+
+    <bean id="hello" class="spring_project01.Hello">
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="name" value="wanxin"/>
+        <property name="address" ref="address"/>
+        <property name="books">
+            <array>
+                <value>王者荣耀</value>
+                <value>王者</value>
+            </array>
+        </property>
+        <property name="hobbies">
+            <list>
+                <value>羽毛球</value>
+                <value>蓝球</value>
+                <value>网球</value>
+            </list>
+        </property>
+        <property name="cards">
+            <map>
+                <entry key="工商银行" value="908098089"></entry>
+                <entry>
+                    <key><value>建设银行</value></key>
+                    <value>999999999999999999999</value>
+                </entry>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>lol</value>
+                <value>lpl</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null></null>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="xuehao">456</prop>
+                <prop key="sex">111</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="u1" class="spring_project01.User" c:age="44" c:name="ddd"/>
+</beans>
