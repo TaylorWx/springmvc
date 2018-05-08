@@ -3,6 +3,7 @@ package com.ssm.po;
 import java.util.Date;
 
 public class Items {
+
     private Integer id;
 
     private String name;
