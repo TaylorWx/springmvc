@@ -13,10 +13,7 @@ import com.ssm.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.servlet.ModelAndView;
@@ -113,4 +110,10 @@ public class ItemsController {
 		itemsService.updateItems(id, itemsCustom);
 		return "success";
 	}
+	@RequestMapping("/itemsview/{id}")
+    @ResponseBody
+    public ItemsCustom itemsView(@PathVariable("id") Integer id) throws Exception{
+        ItemsCustom itemsCustom=itemsService.findItemsById(id);
+        return itemsCustom;
+    }
 }
